@@ -1,0 +1,37 @@
+form#groupform(method='post', onsubmit = 'return checkGroup()')
+  table.name
+    tr 
+      th Nom du groupe
+      td
+        input(type = 'text', name = 'name', id = 'name', value = '#{table.name}')
+        div#name_err.pop
+      td.valid
+        input(type = 'submit', class='btn btn-info')
+    tr
+      th Nombre de Windows :
+      td
+        input(type = 'number', name = 'numberWin', id = 'numberWin', class='right', value = '#{table.numberWin}')
+      td#nb_err.pop
+    tr
+      th Nombre de Linux :
+      td(colspan='2')
+        input(type = 'number', name = 'numberLin', id = 'numberLin', class='right', value = '#{table.numberLin}')
+    tr
+      th Nombre de Mac :
+      td(colspan='2')
+        input(type = 'number', name = 'numberMac', id = 'numberMac', class='right', value = '#{table.numberMac}')
+    tr                                                
+      th Heure de début :
+      td
+        input(type = 'number', min = '0', name = 'st_hour', id = 'st_hour', class='right', value = '#{table.st_hour}')
+        | h 
+        input(type = 'number', min = '0', name = 'st_min', id = 'st_min', class='right', value = '#{table.st_min}')
+      td#h_err.pop
+    tr
+      th Heure de fin :
+      td(colspan='2')
+        input(type = 'number', min = '0', name = 'end_hour', id = 'end_hour', class='right', value = '#{table.end_hour}')
+        | h 
+        input(type = 'number', min = '0', name = 'end_min', id = 'end_min', class='right', value = '#{table.end_min}')
+
+script(type = 'text/javascript', src = '/javascripts/checkGroup.js')

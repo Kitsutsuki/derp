@@ -1,0 +1,28 @@
+extends ../layout
+
+block menu
+  include ../menu
+
+block content
+  div#container
+    hr
+    h2
+      | Gestion des  utilisateurs
+    h3
+      | Liste des utilisateurs existants
+    hr
+    table
+      tr
+        th
+          | #{title}
+        th
+          | Status
+        td.valid
+          input(type = 'button', class="btn btn-info", onclick = 'window.location = "/utilisateur/nouveau"', value = 'Créer un utilisateur')
+      each item in table
+        tr
+          th
+            a(href = '/utilisateur/details/#{item.id}') #{item.login}
+          td(colspan='2')
+            img(src = '/images/#{item.status}.png', alt = '#{item.status}')
+            |  Disponible

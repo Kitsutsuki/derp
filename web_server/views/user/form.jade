@@ -1,0 +1,28 @@
+form#userform(method='post', onsubmit = 'return checkUser()')
+  table
+    tr
+      th Nom d'utilisateur : 
+      td
+        input(type = 'text', name = 'name', id = 'name', value = '#{table.login}')
+        div#name_err.pop
+      td.valid
+        input(type = 'submit', class='btn btn-info')
+    tr
+      th Mot de passe : 
+      td(colspan='2')
+        input(type = 'password', name = 'pass', id = 'pass', value = '#{table.pass}')
+        div#pass_err.pop
+    tr
+      th Confirmer le mot de passe : 
+      td(colspan='2')
+        input(type = 'password', name = 'passconf', id = 'passconf', value = '#{table.pass}')
+        div#conf_err.pop
+    tr
+      th Statut :
+      td(colspan='2')
+        span Admin 
+        input(type = 'radio', name = 'status', id = 'admin', value = 'Admin')
+        span &nbsp;&nbsp; Basique 
+        input(type = 'radio', name = 'status', id = 'basic', value = 'Basique', checked = 'checked')
+
+script(type = 'text/javascript', src = '/javascripts/checkUser.js')

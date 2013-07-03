@@ -1,0 +1,34 @@
+extends ../layout
+
+block menu
+  include ../menu
+
+block content
+  div#container
+    hr
+    h2 Détails de l'utilisateur : #{table.login}
+    hr
+    table
+      tr
+        th Nom d'utilisateur :
+        td #{table.login}
+        td.valid
+          input(type = 'button', class='btn btn-info', value = 'Modifier', onClick = 'window.location = "/utilisateur/modifier/#{table.id}"')
+          input(type = 'button', class='btn btn-info', value = 'Supprimer', onClick = 'conf()')
+      tr
+        th Statut :
+        td(colspan='2') #{table.status}
+      tr
+        th Mot de passe :
+        td(colspan='2') #{table.pass}
+      tr
+        th Jobs :
+        td(colspan='2') #{table.jobs}
+        
+  script.
+    function conf() {
+    if (confirm('Supprimer l\'utilisateur #{table.login} ?')) 
+    {
+    window.location = '/utilisateur/supprimer/#{table.id}';
+    }
+    }

@@ -1,0 +1,28 @@
+{
+  "name": "central_server",
+  "version": "0.0.0",
+  "description": "DERP ====",
+  "main": "index.js",
+  "dependencies": {
+    "each": "~0.4.8",
+    "log": "~1.4.0",
+    "mongoose": "~3.6.13",
+    "socket.io": "~0.9.16",
+    "underscore": "~1.4.4",
+    "xml-writer": "~1.2.4",
+    "zipstream": "~0.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kitsutsuki/derp"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Kitsutsuki/derp/issues"
+  }
+}

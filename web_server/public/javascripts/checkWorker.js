@@ -1,0 +1,3 @@
+function checkWorker() {
+  return true;
+}

@@ -1,0 +1,70 @@
+form#jobform(method='post', onsubmit = 'return checkJob()')
+  table
+    tr
+      th Nom du job :
+      td
+        input(type = 'text', name = 'name', id = 'name', value = '#{table.name}')
+        div#name_err.pop
+      td.valid
+        input(type = 'submit', class='btn btn-info')
+    tr
+      th RAM minimum :
+      td(colspan='2')
+        input(type = 'number', min = '0', step = '256', name = 'minRam', id = 'minRam', class='right', value = '#{table.minRam}')
+        | Mo
+    tr
+      th RAM maximum :
+      td(colspan='2')
+        input(type = 'number', min = '0', step = '256', name = 'maxRam', id = 'maxRam', class='right', value = '#{table.maxRam}')
+        | Mo
+    tr
+      th CPU minimum :
+      td(colspan='2')
+        input(type = 'number', min = '0', step = '0.1', name = 'minCpuFrequence', id = 'minCpuFrequence', class='right', value = '#{table.minCpuFrequence}')
+        | GHz
+    tr
+      th Utilisation du GPU :
+      td(colspan='2')
+        input(type = 'checkbox', name = 'isUsingCG', id = 'isUsingCG', checked = 'checked')
+    tr
+      th Architecture :
+      td(colspan='2')
+        select(name = 'archi', id = 'archi')
+          option(value = '64') 64 bits
+          option(value = '32') 32 bits
+    tr
+      th Création de fichiers :
+      td(colspan='2')
+        input(type = 'checkbox', name = 'filesCreated', id = 'filesCreated', checked = 'checked', value = '#{table.filesCreated}')
+    tr
+      th File name pattern : 
+      td(colspan='2')
+        input(type = 'text', name = 'filesNamePatterns', id = 'filesNamePatterns', value = '')
+    tr
+      th Exécutable Windows :
+      td(colspan='2')
+        input(type = 'file', name = 'winPath', value = '')
+    tr
+      th Exécutable Linux : 
+      td(colspan='2')
+        input(type = 'file', name = 'linPath', value = '')
+    tr
+      th Exécutable Mac :
+      td(colspan='2')
+        input(type = 'file', name = 'macPath', value = '')
+    tr
+      th Priorité :
+      td(colspan='2')
+        input(type = 'number', min = '0', name = 'priority', id = 'priority',class='right', value = '#{table.priority}')
+        div#prior_err.pop
+    tr
+      th Nombre d'exécutions :
+      td(colspan='2')
+        input(type = 'number', min = '0', name = 'nbRun', id = 'nbRun', class='right', value = '#{table.nbRun}')
+        div#exec_err.pop
+    tr
+      th Lignes d'exécution (indépendantes de l'OS) :
+      td(colspan='2')
+        input(type = 'text', name = 'parametersList', id = 'parametersList', value = '#{table.parametersList}')
+
+script(type = 'text/javascript', src = '/javascripts/checkJob.js')

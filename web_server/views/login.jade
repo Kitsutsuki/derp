@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div#container
+    h2 Connexion
+    p Entrez votre identifiant et votre mot de passe.
+    form(methos = 'post')
+      div
+        | #{warning}
+      input(type = 'text', name = 'login', id = 'login', placeholder = 'Identifiant')
+      br
+      input(type = 'password', name = 'pass', id = 'pass', placeholder = 'Mot de passe')
+      br
+      input(type = 'submit', value = 'valider',  class="btn btn-info")

@@ -1,0 +1,78 @@
+html {
+  padding: 50px;
+}
+
+header, footer {
+  padding: 50px;
+  background-color: #EEE;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
+a {
+  color: #666;
+}
+
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+input {
+  margin-right: 5px
+}
+
+input[type='text'], input[type='password'] {
+  height: 21px;
+  padding: 2px;
+}
+
+input[type='number'], input[type='time'] {
+  height: 21px;
+  padding: 2px;
+  width: 56px;
+}
+
+input[type='radio'] {
+  margin: 0px;
+  height: 16px;
+}
+
+table {
+  margin: auto;
+}
+
+td, th {
+  width: 450px;
+	text-align: left;
+}
+
+tr {  
+  height: 35px;
+}
+
+progress {
+  width: 330px;
+}
+
+hr {
+  height: 1px;
+  background-color: #333;
+  border: none;
+  margin: 20px 0px 20px 0px;
+}
+
+footer {
+  text-align: center;
+}
+
+.valid {
+  text-align: right;
+  width: 200px;
+}
+
+.pop {
+  font-size: 12px;
+  color: red;
+}

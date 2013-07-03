@@ -1,0 +1,23 @@
+{
+  "name": "web_server",
+  "version": "0.0.0",
+  "description": "DerpExpress ===========",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~3.3.1",
+    "mongoose": "~3.6.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kitsutsuki/derp"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Kitsutsuki/derp/issues"
+  }
+}

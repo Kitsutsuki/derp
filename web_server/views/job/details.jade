@@ -1,0 +1,77 @@
+extends ../layout
+
+block menu
+  include ../menu
+
+block content
+  div#container
+    hr
+    h2 Détails du job : #{table.name}
+    hr
+    table
+      tr
+        th Nom :
+        td #{table.name}
+        td.valid
+          input(type = 'button', class='btn btn-info', value = 'Modifier', onClick = 'window.location = "/job/modifier/#{table.id}"')
+          input(type = 'button', class='btn btn-info', value = 'Supprimer', onClick = 'conf()')
+      tr
+        th Propriétaire :
+        td(colspan='2') #{table.owner}
+      tr
+        th Statut :
+        td(colspan='2') #{table.status}
+      tr
+        th Progrès :
+        td(colpsan='2') #{table.progress}
+      tr
+        th RAM :
+        td(colspan='2') De #{table.minRam} à #{table.maxRam}
+      tr
+        th CPU minimum :
+        td(colspan='2') #{table.minCpuFrequence}
+      tr
+        th Création de fichiers :
+        td(colspan='2') #{table.filesCreated}
+      tr
+        th File Name Pattern :
+        td(colspan='2') #{table.filesNamePatterns}
+      tr
+        th Utilisation de la carte graphique :
+        td(colspan='2')
+          if table.isUsingCG
+            | Oui
+          else
+            | Non
+      tr
+        th Architecture :
+        td(colspan='2') #{table.archi}
+      tr
+        th Priorité :
+        td(colspan='2') #{table.priority}
+      tr
+        th Nombre d'exécutions :
+        td(colspan='2') #{table.nbRun}
+      tr
+        th Lignes d'exécution :
+        td(colspan='2') #{table.parametersList}
+      tr
+        th Exécutables envoyés :
+        td(colspan='2') #{table.winPath}
+          | #{table.linPath}
+          | #{table.macPath}
+      tr
+        th Chemin sur le serveur :
+        td(colspan='2') #{table.path}
+      tr
+        th Répertoire :
+        td(colspan='2') #{table.dir}
+        
+  script.
+    function conf() {
+    if (confirm('Supprimer le job #{table.name} ?')) 
+    {
+    window.location = '/job/supprimer/#{table.id}';
+    }
+    }
+

@@ -1,0 +1,30 @@
+extends ../layout
+
+block menu
+  include ../menu
+
+block content
+  div#container
+    hr
+    h2
+      | Gestion des  groupes
+    h3
+      | Liste des groupes existants
+    hr
+    table
+      tr
+        th
+          | Groupe
+        th
+          | Status
+        td.valid
+          input(type = 'button', class="btn btn-info", onclick = 'window.location = "/groupe/nouveau"', value = 'Créer un groupe')
+      each item in table
+        tr
+          th
+            a(href = '/groupe/details/#{item.id}') #{item.name}
+          td(colspan='2')
+            img(src = '/images/available.png', alt = 'Disponible')
+            |  Disponible
+
+

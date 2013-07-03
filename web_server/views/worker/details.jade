@@ -1,0 +1,54 @@
+extends ../layout
+
+block menu
+  include ../menu
+
+block content
+  div#container
+    hr
+    h2 Détails du worker : #{table.hostName}
+    hr
+    table
+      tr
+        th Nom :
+        td #{table.hostName}
+        td.valid
+          input(type = 'button', class='btn btn-info', value = 'Modifier le groupe', onClick = 'window.location = "/worker/modifier/#{table.id}"')
+      tr
+        th Groupe :
+        td(colspan='2') #{table.groupName}
+      tr
+        th État :
+        td(colspan='2') 
+          if table.state
+            | Disponible
+          else
+            | Occupé
+      tr
+        th Système d'exploitation :
+        td(colspan='2') #{table.os}
+          if table.archi
+            |  64 bits
+          else
+            |  32 bits
+      tr
+        th Adresse IP :
+        td(colspan='2') #{table.ipAddress}
+      tr
+        th Nombre de coeurs :
+        td(colspan='2') #{table.nbOfCore}
+      tr
+        th Fréquence du CPU :
+        td(colspan='2') #{table.cpuFrequence}
+        
+  script.
+    function conf() {
+    var new_group = prompt('Nouveau groupe du worker #{table.hostName}', '#{table.groupName}')
+    if(new_group == '#{table.groupName}') {
+    alert('Groupe inchangé');
+    window.location = '/worker/details/#{table.id}';
+    }
+    else {
+    window.location = '/worker/modifier/#{table.id}';
+    }
+    }

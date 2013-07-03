@@ -1,0 +1,28 @@
+extends ../layout
+
+block menu
+  include ../menu
+
+block content
+  div#container
+    hr
+    h2
+      | Gestion des workers
+    h3
+      | Liste des workers existants
+    hr
+    table
+      tr
+        th
+          | #{title}
+        th
+          | Status
+      each item in table
+        tr
+          th
+            a(href = '/worker/details/#{item.id}') #{item.hostName}
+          td
+            img(src = '/images/available.png', alt = 'Disponible')
+            |  Disponible
+
+

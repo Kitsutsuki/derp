@@ -1,0 +1,44 @@
+extends ../layout
+
+block menu
+  include ../menu
+
+block content
+  div#container
+    hr
+    h2 Détails du groupe : #{table.name}
+    hr
+    table
+      tr
+        th Nom :
+        td #{table.name}
+        td.valid
+          input(type = 'button', class='btn btn-info', value = 'Modifier', onClick = 'window.location = "/groupe/modifier/#{table.id}"')
+          input(type = 'button', class='btn btn-info', value = 'Supprimer', onClick = 'conf()')
+      tr
+        th Nombre de workers :
+        td(colspan='2') #{table.numberLin + table.numberWin + table.numberMac}
+      tr
+        th Nombre de Windows :
+        td(colspan='2') #{table.numberWin}
+      tr
+        th Nombre de Linux :
+        td(colspan='2') #{table.numberLin}
+      tr
+        th Nombre de Mac :
+        td(colspan='2') #{table.numberMac}
+      tr
+        th Heure de début :
+        td(colspan='2') #{table.st_hour} h #{table.st_min}
+      tr
+        th Heure de fin :
+        td(colspan='2') #{table.end_hour} h #{table.end_min}
+        
+  script.
+    function conf() {
+    if (confirm('Supprimer le groupe #{table.name} ?')) 
+    {
+    window.location = '/groupe/supprimer/#{table.id}';
+    }
+    }
+

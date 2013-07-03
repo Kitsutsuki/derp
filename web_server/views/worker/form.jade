@@ -1,0 +1,16 @@
+form#workerform(method='post', onsubmit = 'return checkWorker()')
+  table
+    tr
+      th Nom d'hôte du worker : 
+      td
+        input(type = 'text', name = 'name', id = 'name', value = '#{table.hostName}', readonly = 'true')
+      td.valid
+        input(type = 'submit', class='btn btn-info')
+    tr
+      th Groupe : 
+      td(colspan='2')
+        select(name = 'groupName', id = 'groupName')
+          for group in groups
+            option(value = '#{group.name}') #{group.name}
+      
+script(type = 'text/javascript', src = '/javascripts/checkWorker.js')

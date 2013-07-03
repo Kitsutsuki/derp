@@ -1,0 +1,17 @@
+extends layout
+
+block menu
+  include menu
+
+block content
+  div#container
+    hr
+    h2
+      | Modifications effectuées
+    h3
+      | Vous allez être redirigés vers la liste des #{type}s dans 5 secondes.
+      br
+      a(href='/#{type}') Cliquez ici si vous ne voulez pas attendre.
+
+  script.
+    setTimeout('window.location = "/#{type}"', 5000);
